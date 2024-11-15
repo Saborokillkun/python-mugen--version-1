@@ -1,5 +1,4 @@
 var Module = {
-    // Configuration for the WebAssembly module
     totalDependencies: 0,
     preRun: [],
     postRun: [],
@@ -12,21 +11,19 @@ var Module = {
 
     // Custom function to start the game
     startGame: function() {
-        // Create and set up the canvas
         const canvas = document.getElementById("game-canvas");
-        canvas.width = 1900;
-        canvas.height = 950;
+        canvas.width = 800;
+        canvas.height = 600;
 
-        // Start the game loop
         gameLoop();
     },
 
     // Game loop function to update the game and render each frame
     gameLoop: function() {
         // Call the Python code in the WebAssembly module to update and render
-        Module._game_update();  // This is where your Python game logic gets called
-        
-        // Request the next frame (for continuous game loop)
+        Module._game_update();
+
+        // Request the next frame
         requestAnimationFrame(Module.gameLoop);
     }
 };
