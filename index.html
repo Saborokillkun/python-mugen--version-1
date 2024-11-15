@@ -1,9 +1,39 @@
-<h1>My Pygame Download Page</h1>
-<p>Click the link below to download and run the game:</p>
-<a href="https://github.com/Saborokillkun/python-mugen--version-1">Download Game</a>
-<p>Instructions:</p>
-<ol>
-    <li>Install Python from <a href="https://www.python.org/downloads/">python.org</a>.</li>
-    <li>Install Pygame by running <code>pip install pygame</code> in your command prompt.</li>
-    <li>Run the downloaded game file with <code>python game.py</code>.</li>
-</ol>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pygame in the Browser</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+        }
+        canvas {
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="game-canvas"></canvas>
+
+    <script src="game.js"></script>
+    <script>
+        // Set up the canvas and start the game
+        const canvas = document.getElementById('game-canvas');
+        canvas.width = 1900;  // Set canvas size
+        canvas.height = 950; // Set canvas size
+
+        // Initialize Pygbag (it’s done automatically via game.js, but ensure it starts)
+        window.onload = function() {
+            if (typeof Game !== "undefined") {
+                Game.start(canvas);  // Assuming the game object has a 'start' method
+            }
+        };
+    </script>
+</body>
+</html>
