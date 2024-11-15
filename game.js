@@ -14,8 +14,8 @@ var Module = {
     startGame: function() {
         // Create and set up the canvas
         const canvas = document.getElementById("game-canvas");
-        canvas.width = 800;
-        canvas.height = 600;
+        canvas.width = 1900;
+        canvas.height = 950;
 
         // Start the game loop
         gameLoop();
