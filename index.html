@@ -26,7 +26,7 @@
 
     <script>
         window.onload = function() {
-            // Wait for the WebAssembly module to load
+            // Wait for the WebAssembly module to load and initialize
             if (typeof Module !== "undefined" && Module.onRuntimeInitialized) {
                 Module.onRuntimeInitialized();  // Start the game
             }
